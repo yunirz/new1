@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title> Gallery Single</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Cardo:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: PhotoFolio
+  * Updated: May 30 2023 with Bootstrap v5.3.0
+  * Template URL: https://bootstrapmade.com/photofolio-bootstrap-photography-website-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+  <style>
+    #cryptoModal {
+      display: block;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.6);
+      font-family: Arial, sans-serif;
+    }
+
+    #cryptoModalContent {
+      background-color: #fff;
+      margin: 10% auto;
+      padding: 20px;
+      width: 90%;
+      max-width: 500px;
+      border-radius: 10px;
+    }
+
+    .wallet {
+      margin-bottom: 15px;
+    }
+
+    .wallet strong {
+      font-size: 16px;
+    }
+
+    .copy-btn {
+      margin-left: 10px;
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+
+    button {
+      margin-top: 20px;
+    }
+
+    .instructions {
+      margin-top: 20px;
+      font-size: 14px;
+      color: #fff;
+    }
+  </style>
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #111;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      padding: 0 10px;
+    }
+
+    .container {
+      max-width: 960px;
+      width: 100%;
+    }
+
+    header {
+      background: #1F1F1F;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 1px #fff;
+      margin-bottom: 20px;
+    }
+
+    header h2 {
+      color: red;
+      font-weight: 600;
+      font-size: 22px;
+    }
+
+    .main-preview {
+      background-color: #2a2a2a;
+      border-radius: 10px;
+      padding: 16px;
+    }
+
+    .video-wrapper {
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%;
+      background: #000;
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 15px;
+    }
+
+    .video-wrapper video {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      object-fit: contain;
+    }
+
+    .video-info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .video-info h1 {
+      font-size: 16px;
+      padding: 10px 0;
+    }
+
+    .video-info .price {
+      font-size: 19px;
+      font-weight: bold;
+      color: #ff2600;
+    }
+
+    .views {
+      font-size: 13px;
+      color: #ccc;
+      padding-bottom: 10px;
+    }
+
+    .purchase {
+      background-color: #3D3D3D;
+      margin: 20px 0 10px 0;
+      padding: 10px 15px;
+      border-radius: 5px 5px 0 0;
+      font-size: 16px;
+    }
+
+    .purchase-options {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      background-color: #3d3d3d;
+      padding: 15px;
+      border-radius: 0 0 8px 8px;
+    }
+
+    .option {
+      flex: 1 1 280px;
+      background: #4C4C4C;
+      padding: 16px;
+      border-radius: 6px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      box-shadow: 0 0px 1px rgba(255, 255, 255, 0.3);
+    }
+
+    .option h2 {
+      font-size: 16px;
+      color: red;
+    }
+
+    .option p {
+      font-size: 12px;
+      color: #CACACA;
+    }
+
+    .option h6 {
+      background-color: #313131bd;
+      padding: 5px;
+      border-radius: 3px;
+      color: #CACACA;
+      font-size: 11px;
+    }
+
+    .option button {
+      padding: 12px;
+      border: none;
+      border-radius: 6px;
+      font-size: 15px;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .option.telegram button {
+      background: #37ABE1;
+      color: white;
+    }
+
+    .option.paypal button {
+      background: #0070ba;
+      color: white;
+    }
+
+    .option.crypto button {
+      background: #333;
+      color: white;
+    }
+
+    .option button:hover {
+      transform: scale(1.02);
+    }
+
+    .description {
+      background: #1e1e1e;
+      margin-top: 30px;
+      padding: 16px;
+      border-radius: 6px;
+      font-size: 14px;
+      color: #ccc;
+    }
+
+    #cryptoModal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.8);
+      justify-content: center;
+      align-items: center;
+    }
+
+    #cryptoModalContent {
+      background: #222;
+      padding: 20px;
+      border-radius: 8px;
+      text-align: center;
+      color: white;
+      max-width: 90%;
+    }
+
+    #cryptoModalContent h3 {
+      color: #0f0;
+      margin-bottom: 10px;
+    }
+
+    #cryptoModalContent button {
+      margin-top: 20px;
+      background: red;
+      border: none;
+      padding: 10px 20px;
+      color: white;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    @media (max-width: 600px) {
+      .video-info {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .video-info .price {
+        padding-top: 5px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center  me-auto me-lg-0">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="assets/img/logo.png" alt=""> -->
+        <i style="color: red;" class="bi bi-camera"></i>
+      </a>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+        </ul>
+      </nav><!-- .navbar -->
+
+      <div class="header-social-links">
+        <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+      </div>
+      <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+      <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+
+    </div>
+  </header><!-- End Header -->
+
+  <main id="main" data-aos="fade" data-aos-delay="1500">
+
+    <!-- ======= End Page Header ======= -->
+    <div class="page-header d-flex align-items-center">
+      <div class="container position-relative">
+        <div class="row d-flex justify-content-center">
+        </div>
+      </div>
+    </div><!-- End Page Header -->
+
+
+    <div class="preview-container">
+    <div class="main-preview">
+      <div class="fundo-di">
+        <div class="video-wrapper">
+          <video controls>
+            <source src="previas/cp4.mp4" type="video/mp4">
+            Seu navegador não suporta vídeo.
+          </video>
+        </div>
+        <div class="video-info">
+          <div>
+            <h1>CP 4</h1>
+            <div class="views">⦿ 19 089 views</div>
+          </div>
+          <div class="price" data-price="40">$ 35.00</div>
+        </div>
+        <div>
+          <h4 class="purchase">Purchase Options</h4>
+        </div>
+        <div class="purchase-options">
+          <div class="option telegram">
+            <h2>Direct Payment</h2>
+            <p>Negotiate directly with the seller via Telegram</p>
+            <button onclick="window.open('https://t.me/kaylaz69', '_blank')">Contact Seller</button>
+            <h6>⛊ All transactions are secure and protected</h6>
+          </div>
+          <div class="option paypal">
+            <h2>PayPal Payment</h2>
+            <p>Pay securely with PayPal</p>
+            <button>Pay with PayPal</button>
+            <h6>⛊ Secure payment through PayPal</h6>
+          </div>
+          <div class="option crypto">
+            <h2>Crypto Payment</h2>
+            <p>Pay with Bitcoin, Ethereum, LTC or Solana</p>
+            <button onclick="showCryptoModal()">Crypto Payment</button>
+            <h6>⛊ Fast and global payment</h6>
+          </div>
+        </div>
+        <div class="description">
+          <p>
+            This is premium video content.<br><br>
+            After completing your payment, you will receive access instantly.<br>
+            For any issues, please contact us through Telegram.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal for Crypto -->
+
+  <div id="cryptoModal">
+  <div id="cryptoModalContent">
+    <h3>Crypto Payment Instructions</h3>
+
+    <div class="wallet">
+      <p>Send <strong>$35</strong> to the wallet below:</p>
+    </div>
+
+    <div class="wallet">
+      <p>
+        BTC  <strong id="wallet1">148fJ3Ft1mQ5ScJitF2kSeASWU1gwL9xwG</strong>
+      <button class="copy-btn" onclick="copyToClipboard('wallet1')">Copy</button>
+      </p>
+    </div>
+
+    <div class="wallet">
+      <p>
+        ETH  <strong id="wallet2">0xc077bd3412a4a1dcaa6a7c324c3ef12849a262f7</strong>
+      <button class="copy-btn" onclick="copyToClipboard('wallet2')">Copy</button>
+      </p>
+    </div>
+
+    <div class="wallet">
+      <p>
+        USDT  <strong id="wallet3">0xc077bd3412a4a1dcaa6a7c324c3ef12849a262f7</strong>
+      <button class="copy-btn" onclick="copyToClipboard('wallet3')">Copy</button>
+      </p>
+    </div>
+
+    <div class="instructions">
+      <p>After sending the payment, take a screenshot of the transaction (payment proof) and send it to our <strong><a href="https://t.me/YourTelegramUsername" target="_blank">Telegram</a></strong>.</p>
+      <p>Once verified, we will deliver your product.</p>
+    </div>
+
+    <button onclick="closeCryptoModal()">Close</button>
+  </div>
+</div>
+
+<script>
+  function copyToClipboard(id) {
+    const walletText = document.getElementById(id).innerText;
+    navigator.clipboard.writeText(walletText).then(() => {
+      alert("Wallet ID copied to clipboard!");
+    });
+  }
+
+  function closeCryptoModal() {
+    document.getElementById("cryptoModal").style.display = "none";
+  }
+
+    function showCryptoModal() {
+      document.getElementById("cryptoModal").style.display = "flex";
+    }
+    function closeCryptoModal() {
+      document.getElementById("cryptoModal").style.display = "none";
+    }
+  </script>
+
+  </main><!-- End #main -->
+
+  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <div id="preloader">
+    <div class="line"></div>
+  </div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+</html>
