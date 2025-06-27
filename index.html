@@ -2,404 +2,597 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
-  <title>Index</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
-
-  <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>THE BEST CONTENT</title>
 
   <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Cardo:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet" />
 
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <!-- Ícones Bootstrap (opcional para ícones de redes sociais) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
 
-  <!-- Template Main CSS File -->
-  <link href="assets/css/main.css" rel="stylesheet">
-
-  <!-- =======================================================
-  * Template Name: PhotoFolio
-  * Updated: May 30 2023 with Bootstrap v5.3.0
-  * Template URL: https://bootstrapmade.com/photofolio-bootstrap-photography-website-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
-    <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #111;
-      color: #fff;
+  <style>
+    * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
 
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background: #111;
+      color: #fff;
+      padding: 20px;
+    }
+
     header {
-      background-color: #1F1F1F;
+      background: #1F1F1F;
       height: 70px;
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      padding: 0 30px;
+      justify-content: center;
+      margin-bottom: 20px;
       box-shadow: 0 0 1px #fff;
     }
 
     header h2 {
       color: red;
-      font-size: 20px;
+      font-weight: 600;
+      font-size: 22px;
     }
 
-    header h3 {
-      color: #fff;
+    .vitrine {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .product-card {
+      background: #2a2a2a;
+      border-radius: 10px;
+      padding: 16px;
+      max-width: 350px;
+      width: 100%;
+    }
+
+    .video-wrapper {
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%;
+      background: #000;
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 15px;
+    }
+
+    .video-wrapper video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .video-info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .video-info h1 {
       font-size: 16px;
     }
 
-    .icon-lupa {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      border: 1px solid #fff3;
-      border-radius: 8px;
-      padding: 10px 15px;
-      max-width: 300px;
-      margin: 20px auto;
+    .price {
+      font-size: 18px;
+      font-weight: bold;
+      color: #ff2600;
     }
 
-    .lupa-icon {
-      font-size: 20px;
-      color: #888;
+    .purchase-options {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+        align-items: center; /* NOVO: Centraliza os botões */
+        text-align: center;
+        width: 100%;
     }
 
-    #searchInput {
-      color: #fff;
-      background: transparent;
-      border: none;
-      outline: none;
-      width: 100%;
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 16px;
-      padding: 20px;
-    }
-
-    .card {
-      background-color: #1e1e1e;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-      transition: transform 0.2s;
-      cursor: pointer;
+    /**.purchase-options {
       display: flex;
       flex-direction: column;
-    }
+      gap: 10px;
+      margin-top: 10px;
+    }**/
 
-    .card:hover {
-      transform: scale(1.03);
-    }
-
-    .video-container {
+    .option button {
+      padding: 10px;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      border: none;
       width: 100%;
-      aspect-ratio: 9 / 16;
-      background-color: #000;
-      overflow: hidden;
-      border-radius: 6px;
-      position: relative;
+      text-align: center;
     }
 
-    .video-container video {
+    .telegram button {
+      background: #37ABE1;
+      color: white;
+    }
+
+    .paypal button {
+      background: #0070ba;
+      color: white;
+    }
+
+    .crypto button {
+      background: #444;
+      color: white;
+    }
+
+    .description {
+      font-size: 14px;
+      color: #ccc;
+      margin-top: 15px;
+    }
+
+    /* Modal Cripto */
+    #cryptoModal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      top: 0;
+      left: 0;
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      background: rgba(0, 0, 0, 0.8);
+      justify-content: center;
+      align-items: center;
     }
 
-    .info {
-      padding: 10px;
-      color: #fff;
+    #cryptoModalContent {
+      background: #222;
+      padding: 20px;
+      border-radius: 8px;
+      text-align: center;
+      color: white;
+      max-width: 90%;
     }
 
-    .info h2 {
+    #cryptoModalContent h3 {
+      color: #0f0;
+      margin-bottom: 10px;
+    }
+
+    .wallet {
+      margin-bottom: 10px;
+    }
+
+    .wallet strong {
+      font-size: 16px;
+    }
+
+    .copy-btn {
+      margin-left: 8px;
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+
+    #cryptoModalContent button {
+      margin-top: 20px;
+      background: red;
+      border: none;
+      padding: 10px 20px;
+      color: white;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    .instructions {
+      margin-top: 10px;
       font-size: 14px;
-      margin-bottom: 6px;
-      color: #fff;
+      color: #ccc;
     }
 
-    .linha {
-      display: flex;
-      justify-content: space-between;
-      font-size: 14px;
-      color: #fff;
-    }
-
-    .inf {
-      color: red;
-      font-weight: bold;
-    }
-
-    @media (max-width: 768px) {
-      header {
+    @media (max-width: 600px) {
+      .video-info {
         flex-direction: column;
-        height: auto;
-        padding: 15px;
-        gap: 10px;
+        align-items: flex-start;
+      }
+
+      .price {
+        padding-top: 5px;
       }
     }
   </style>
-
-
 </head>
 
 <body>
-  <main id="main" data-aos="fade" data-aos-delay="1500">
 
-    <!-- ======= Gallery Section ======= -->
- 
-      <header>
-        <h2>Media Store</h2>
-        <h3>LEAKED CONTENT</h3>
-      </header>
+  <header>
+    <h2>🔥 NEW FOLDERS - THE BEST CONTENT </h2>
+  </header>
 
-      <div class="icon-lupa">
-        <span class="lupa-icon">🔍</span>
-        <input type="text" id="searchInput" placeholder="Search content..." />
-      </div>
+    <div class="vitrine">
 
-      <!-- =======  Section Number 1 ======= -->
-      <div class="cards">
-        <div class="card" onclick="window.location.href='lizzy.html'">
-          <div class="info">
-            <h2>LIZZY</h2>
-          </div>
-          <div class="video-container">
-            <video src="https://qu.ax/BUcpo.mp4" muted autoplay loop></video>
-            <video src="https://qu.ax/yucxC.mp4" muted autoplay loop></video>
-          </div>
-          <div class="info">
-            <h2>LIZZY</h2>
-            <div class="linha">
-              <p>⦿ 9,788 views</p>
-              <p class="inf"> PRICE $30</p>
+        <!-- Produto 1 -->
+        <div class="product-card">
+            <div class="video-wrapper">
+                <video controls><source src="https://qu.ax/lcrdY.mp4" type="video/mp4"></video>
             </div>
-          </div>
-        </div>
-        <div class="card" onclick="window.location.href='amelia.html'">
-          <div class="info">
-            <h2>AMELIA BONDLE GIRL</h2>
-          </div>
-          <div class="video-container">
-            <video src="https://qu.ax/sYlla.mp4" muted autoplay loop></video>
-          </div>
-          <div class="info">
-            <h2>AMELIA</h2>
-            <div class="linha">
-              <p>⦿ 7,354 views</p>
-              <p class="inf"> PRICE $25</p>
+            <div class="video-wrapper">
+                <video controls><source src="https://qu.ax/sYlla.mp4" type="video/mp4"></video>
             </div>
-          </div>
-        </div>
-        <div class="card" onclick="window.location.href='premiumcp.html'">
-         <div class="info">
-            <h2>PREMIUM CP</h2>
-          </div>
-          <div class="video-container">
-            <video src="https://qu.ax/sZmvf.mp4" muted autoplay loop></video>
-          </div>
-          <div class="info">
-            <h2>PREMIUM CP</h2>
-            <div class="linha">
-              <p>⦿ 38,354 views</p>
-              <p class="inf"> PRICE $45</p>
+            <div class="video-info">
+                <h1>AMELIA BONDLE GIRL</h1>
+                <div class="price">$25.00</div>
             </div>
-          </div>
-        </div>
-        <div class="card" onclick="window.location.href='monandson.html'">
-          <div class="info">
-            <h2>MON AND SON</h2>
-          </div>
-          <div class="video-container">
-            <video src="https://qu.ax/PDHBq.mp4" muted autoplay loop></video>
-            <video src="https://qu.ax/jJQbe.mp4" muted autoplay loop></video>
-          </div>
-          <div class="info">
-            <h2>MON AND SON</h2>
-            <div class="linha">
-              <p>⦿ 23,354 views</p>
-              <p class="inf"> PRICE $45</p>
+            <div class="purchase-options">
+                <div class="option telegram">
+                <button onclick="window.open('https://t.me/kaylaz69', '_blank')">Telegram</button>
+                </div>
+                <div class="option paypal">
+                <button>PayPal</button>
+                </div>
+                <div class="option crypto">
+                <button onclick="showCryptoModal()">Crypto</button>
+                </div>
             </div>
-          </div>
-        </div>
-      </div><!-- End Section Number 1-->
+            <div class="description">
+                Premium content. Payment gives instant access.
+            </div>
+        </div><!-- End Produto 1 -->
 
-      <!-- =======  Section Number 2 ======= -->
-      <div class="cards">
-        <div class="card" onclick="window.location.href='cp1.html'">
-          <div class="info">
-            <h2>CP 1</h2>
-          </div>
-          <div class="video-container">
-            <video src="https://qu.ax/mljwk.mp4" muted autoplay loop></video>
-          </div>
-          <div class="info">
-            <h2>CP 1</h2>
-            <div class="linha">
-              <p>⦿ 5,453 views</p>
-              <p class="inf"> PRICE $35</p>
+        <!-- Produto 2 LIZZY -->
+        <div class="product-card">
+            <div class="video-wrapper">
+                <video controls><source src="https://qu.ax/AruNc.mp4" type="video/mp4"></video>
             </div>
-          </div>
-        </div>
-        <div class="card" onclick="window.location.href='cp2.html'">
-          <div class="info">
-            <h2>CP 2</h2>
-          </div>
-          <div class="video-container">
-            <video src="https://qu.ax/ibyBp.mp4" muted autoplay loop></video>
-          </div>
-          <div class="info">
-            <h2>CP 2</h2>
-            <div class="linha">
-              <p>⦿ 12,354 views</p>
-              <p class="inf"> PRICE $35</p>
+            <div class="video-wrapper">
+                <video controls><source src="https://qu.ax/yucxC.mp4"" type="video/mp4"></video>
             </div>
-          </div>
-        </div>
-        <div class="card" onclick="window.location.href='cp3.html'">
-          <div class="info">
-            <h2>CP 3</h2>
-          </div>
-          <div class="video-container">
-            <video src="https://qu.ax/spiUZ.mp4" muted autoplay loop></video>
-          </div>
-          <div class="info">
-            <h2>CP 3</h2>
-            <div class="linha">
-              <p>⦿ 8,354 views</p>
-              <p class="inf"> PRICE $35</p>
+            <div class="video-info">
+                <h1>LIZZY</h1>
+                <div class="price">$30.00</div>
             </div>
-          </div>
-        </div>
-        <div class="card" onclick="window.location.href='cp4.html'">
-          <div class="info">
-            <h2>CP 4</h2>
-          </div>
-          <div class="video-container">
-            <video src="https://qu.ax/sjEgd.mp4" muted autoplay loop></video>
-          </div>
-          <div class="info">
-            <h2>CP 4</h2>
-            <div class="linha">
-              <p>⦿ 28,354 views</p>
-              <p class="inf"> PRICE $35</p>
+            <div class="purchase-options">
+                <div class="option telegram">
+                <button onclick="window.open('https://t.me/kaylaz69', '_blank')">Telegram</button>
+                </div>
+                <div class="option paypal">
+                <button>PayPal</button>
+                </div>
+                <div class="option crypto">
+                <button onclick="showCryptoModal()">Crypto</button>
+                </div>
             </div>
-          </div>
-        </div>
-      </div><!-- End Section Number 2-->
+            <div class="description">
+                Private and secure. Access granted after payment.
+            </div>
+        </div><!-- End Produto 2 -->
 
-      <!-- =======  Section Number 3 ======= -->
-      <div class="cards">
-        <div class="card" onclick="window.location.href='cpcollection2025.html'">
-          <div class="info">
-            <h2>CP COLLECTION 2025</h2>
-          </div>
-          <div class="video-container">
-            <video src="https://qu.ax/upfXG.mp4" muted autoplay loop></video>
-          </div>
-          <div class="info">
-            <h2>CP COLLECTION 2025</h2>
-            <div class="linha">
-              <p>⦿ 15,453 views</p>
-              <p class="inf"> PRICE $50</p>
+        <!-- Produto 3 PREMIUM CP-->
+        <div class="product-card">
+            <div class="video-wrapper">
+                <video controls><source src="https://qu.ax/sZmvf.mp4" type="video/mp4"></video>
             </div>
-          </div>
-        </div>
-        <div class="card" onclick="window.location.href='teens.html'">
-          <div class="info">
-            <h2>ENGLISH TEENS</h2>
-          </div>
-          <div class="video-container">
-            <video src="https://qu.ax/XXqOZ.mp4" muted autoplay loop></video>
-          </div>
-          <div class="info">
-            <h2>ENGLISH TEENS</h2>
-            <div class="linha">
-              <p>⦿ 22,354 views</p>
-              <p class="inf"> PRICE $35</p>
+            <div class="video-wrapper">
+                <video controls><source src="https://qu.ax/TwNOP.mp4" type="video/mp4"></video>
             </div>
-          </div>
-        </div>
-        <div class="card" onclick="window.location.href='ivankah.html'">
-          <div class="info">
-            <h2>IVANKAH</h2>
-          </div>
-          <div class="video-container">
-            <video src="https://qu.ax/SBQhU.mp4" muted autoplay loop></video>
-          </div>
-          <div class="info">
-            <h2>IVANKAH</h2>
-            <div class="linha">
-              <p>⦿ 18,354 views</p>
-              <p class="inf"> PRICE $30</p>
+            <div class="video-info">
+                <h1>PREMIUM CP</h1>
+                <div class="price">$45.00</div>
             </div>
-          </div>
-        </div>
-        <div class="card" onclick="window.location.href='desiregracie.html'">
-          <div class="info">
-            <h2>DESIRE GRACIE</h2>
-          </div>
-          <div class="video-container">
-            <video src="https://qu.ax/PmjUw.mp4" muted autoplay loop></video>
-          </div>
-          <div class="info">
-            <h2>DESIRE GRACIE</h2>
-            <div class="linha">
-              <p>⦿ 18,967 views</p>
-              <p class="inf"> PRICE $30</p>
+            <div class="purchase-options">
+                <div class="option telegram">
+                <button onclick="window.open('https://t.me/kaylaz69', '_blank')">Telegram</button>
+                </div>
+                <div class="option paypal">
+                <button>PayPal</button>
+                </div>
+                <div class="option crypto">
+                <button onclick="showCryptoModal()">Crypto</button>
+                </div>
             </div>
-          </div>
-        </div>
-      </div><!-- End Section Number 3-->
+            <div class="description">
+                Secure and instant delivery after verification.
+            </div>
+        </div><!-- End Produto 3 -->
 
-  </main><!-- End #main -->
+        <!-- Produto 4 MONANDSON-->
+        <div class="product-card">
+            <div class="video-wrapper">
+                <video controls><source src="https://qu.ax/PDHBq.mp4" type="video/mp4"></video>
+            </div>
+            <div class="video-wrapper">
+                <video controls><source src="https://qu.ax/jJQbe.mp4" type="video/mp4"></video>
+            </div>
+            <div class="video-info">
+                <h1>MON AND SON</h1>
+                <div class="price">$$45.00</div>
+            </div>
+            <div class="purchase-options">
+                <div class="option telegram">
+                <button onclick="window.open('https://t.me/kaylaz69', '_blank')">Telegram</button>
+                </div>
+                <div class="option paypal">
+                <button>PayPal</button>
+                </div>
+                <div class="option crypto">
+                <button onclick="showCryptoModal()">Crypto</button>
+                </div>
+            </div>
+            <div class="description">
+                Secure and instant delivery after verification.
+            </div>
+        </div><!-- End Produto 4 -->
 
+        <!-- Produto 5 CP1 -->
+        <div class="product-card">
+            <div class="video-wrapper">
+                <video controls><source src="https://qu.ax/mljwk.mp4" type="video/mp4"></video>
+            </div>
+            <div class="video-info">
+                <h1>CP 1</h1>
+                <div class="price">$35.00</div>
+            </div>
+            <div class="purchase-options">
+                <div class="option telegram">
+                <button onclick="window.open('https://t.me/kaylaz69', '_blank')">Telegram</button>
+                </div>
+                <div class="option paypal">
+                <button>PayPal</button>
+                </div>
+                <div class="option crypto">
+                <button onclick="showCryptoModal()">Crypto</button>
+                </div>
+            </div>
+            <div class="description">
+                Secure and instant delivery after verification.
+            </div>
+        </div><!-- End Produto 5 -->
 
-  <!-- ======= Hero Section ======= -->
-  <section id="hero" class="hero d-flex flex-column justify-content-center align-items-center" data-aos="fade" data-aos-delay="1500">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-6 text-center">
-          <a href="https://t.me/kaylaz69" class="btn-get-started">CUSTOMER SUPPORT</a>
-        </div>
-      </div>
-    </div>
-  </section><!-- End Hero Section -->
+        <!-- Produto 6 CP2-->
+        <div class="product-card">
+            <div class="video-wrapper">
+                <video controls><source src="https://qu.ax/ibyBp.mp4" type="video/mp4"></video>
+            </div>
+            <div class="video-info">
+                <h1>CP 2</h1>
+                <div class="price">$35.00</div>
+            </div>
+            <div class="purchase-options">
+                <div class="option telegram">
+                <button onclick="window.open('https://t.me/kaylaz69', '_blank')">Telegram</button>
+                </div>
+                <div class="option paypal">
+                <button>PayPal</button>
+                </div>
+                <div class="option crypto">
+                <button onclick="showCryptoModal()">Crypto</button>
+                </div>
+            </div>
+            <div class="description">
+                Secure and instant delivery after verification.
+            </div>
+        </div><!-- End Produto 6 -->
 
-  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+        <!-- Produto 7 CP3-->
+        <div class="product-card">
+            <div class="video-wrapper">
+                <video controls><source src="https://qu.ax/spiUZ.mp4" type="video/mp4"></video>
+            </div>
+            <div class="video-info">
+                <h1>CP 3</h1>
+                <div class="price">$35.00</div>
+            </div>
+            <div class="purchase-options">
+                <div class="option telegram">
+                <button onclick="window.open('https://t.me/kaylaz69', '_blank')">Telegram</button>
+                </div>
+                <div class="option paypal">
+                <button>PayPal</button>
+                </div>
+                <div class="option crypto">
+                <button onclick="showCryptoModal()">Crypto</button>
+                </div>
+            </div>
+            <div class="description">
+                Secure and instant delivery after verification.
+            </div>
+        </div><!-- End Produto 7 -->
 
-  <div id="preloader">
-    <div class="line"></div>
+        <!-- Produto 8 CP4-->
+        <div class="product-card">
+            <div class="video-wrapper">
+                <video controls><source src="https://qu.ax/sjEgd.mp4" type="video/mp4"></video>
+            </div>
+            <div class="video-info">
+                <h1>CP 4</h1>
+                <div class="price">$35.00</div>
+            </div>
+            <div class="purchase-options">
+                <div class="option telegram">
+                <button onclick="window.open('https://t.me/kaylaz69', '_blank')">Telegram</button>
+                </div>
+                <div class="option paypal">
+                <button>PayPal</button>
+                </div>
+                <div class="option crypto">
+                <button onclick="showCryptoModal()">Crypto</button>
+                </div>
+            </div>
+            <div class="description">
+                Secure and instant delivery after verification.
+            </div>
+        </div><!-- End Produto 8 -->
+
+        <!-- Produto 9 CP COLLECTION 2025--> 
+        <div class="product-card">
+            <div class="video-wrapper">
+                <video controls><source src="https://qu.ax/upfXG.mp4" type="video/mp4"></video>
+            </div>
+            <div class="video-wrapper">
+                <video controls><source src="https://qu.ax/fwgRD.MP4" type="video/mp4"></video>
+            </div>
+            <div class="video-info">
+                <h1>CP COLLECTION 2025</h1>
+                <div class="price">$50.00</div>
+            </div>
+            <div class="purchase-options">
+                <div class="option telegram">
+                <button onclick="window.open('https://t.me/kaylaz69', '_blank')">Telegram</button>
+                </div>
+                <div class="option paypal">
+                <button>PayPal</button>
+                </div>
+                <div class="option crypto">
+                <button onclick="showCryptoModal()">Crypto</button>
+                </div>
+            </div>
+            <div class="description">
+                Secure and instant delivery after verification.
+            </div>
+        </div><!-- End Produto 9 -->
+
+        <!-- Produto 10 TEENS-->
+        <div class="product-card">
+            <div class="video-wrapper">
+                <video controls><source src="https://qu.ax/NGnwa.mp4" type="video/mp4"></video>
+            </div>
+            <div class="video-wrapper">
+                <video controls><source src="https://qu.ax/eajQp.mp4" type="video/mp4"></video>
+            </div>
+            <div class="video-info">
+                <h1>ENGLISH TEENS</h1>
+                <div class="price">$35.00</div>
+            </div>
+            <div class="purchase-options">
+                <div class="option telegram">
+                <button onclick="window.open('https://t.me/kaylaz69', '_blank')">Telegram</button>
+                </div>
+                <div class="option paypal">
+                <button>PayPal</button>
+                </div>
+                <div class="option crypto">
+                <button onclick="showCryptoModal()">Crypto</button>
+                </div>
+            </div>
+            <div class="description">
+                Secure and instant delivery after verification.
+            </div>
+        </div><!-- End Produto 10 -->
+
+        <!-- Produto 11 IVANKAH-->
+        <div class="product-card">
+            <div class="video-wrapper">
+                <video controls><source src="https://qu.ax/SBQhU.mp4" type="video/mp4"></video>
+            </div>
+            <div class="video-wrapper">
+                <video controls><source src="https://qu.ax/NBzHm.mp4" type="video/mp4"></video>
+            </div>
+            <div class="video-info">
+                <h1>IVANKAH</h1>
+                <div class="price">$30.00</div>
+            </div>
+            <div class="purchase-options">
+                <div class="option telegram">
+                <button onclick="window.open('https://t.me/kaylaz69', '_blank')">Telegram</button>
+                </div>
+                <div class="option paypal">
+                <button>PayPal</button>
+                </div>
+                <div class="option crypto">
+                <button onclick="showCryptoModal()">Crypto</button>
+                </div>
+            </div>
+            <div class="description">
+                Secure and instant delivery after verification.
+            </div>
+        </div><!-- End Produto 11 -->
+
+        <!-- Produto 12 DESIRE GRACIE-->
+        <div class="product-card">
+            <div class="video-wrapper">
+                <video controls><source src="https://qu.ax/EKDpw.mp4" type="video/mp4"></video>
+            </div>
+            <div class="video-wrapper">
+                <video controls><source src="https://qu.ax/oNssw.mp4" type="video/mp4"></video>
+            </div>
+            <div class="video-info">
+                <h1>DESIRE GRACIE</h1>
+                <div class="price">$30.00</div>
+            </div>
+            <div class="purchase-options">
+                <div class="option telegram">
+                <button onclick="window.open('https://t.me/kaylaz69', '_blank')">Telegram</button>
+                </div>
+                <div class="option paypal">
+                <button>PayPal</button>
+                </div>
+                <div class="option crypto">
+                <button onclick="showCryptoModal()">Crypto</button>
+                </div>
+            </div>
+            <div class="description">
+                Secure and instant delivery after verification.
+            </div>
+        </div><!-- End Produto 12 -->
+
   </div>
 
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <!-- Modal Cripto -->
+  <div id="cryptoModal">
+    <div id="cryptoModalContent">
+      <h3>Crypto Payment Instructions</h3>
 
-  <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
+      <div class="wallet">
+        <p>Send <strong>the money</strong> to the wallet below:</p>
+      </div>
 
+      <div class="wallet">
+        <p>
+          BTC: <strong id="wallet1">148fJ3Ft1mQ5ScJitF2kSeASWU1gwL9xwG</strong>
+          <button class="copy-btn" onclick="copyToClipboard('wallet1')">Copy</button>
+        </p>
+      </div>
+
+      <div class="wallet">
+        <p>
+          ETH/USDT: <strong id="wallet2">0xc077bd3412a4a1dcaa6a7c324c3ef12849a262f7</strong>
+          <button class="copy-btn" onclick="copyToClipboard('wallet2')">Copy</button>
+        </p>
+      </div>
+
+      <div class="instructions">
+        After payment, send proof to our <a href="https://t.me/kaylaz69" target="_blank">Telegram</a>. Product is delivered after verification.
+      </div>
+
+      <button onclick="closeCryptoModal()">Close</button>
+    </div>
+  </div>
+
+  <script>
+    function copyToClipboard(id) {
+      const walletText = document.getElementById(id).innerText;
+      navigator.clipboard.writeText(walletText).then(() => {
+        alert("Wallet address copied!");
+      });
+    }
+
+    function showCryptoModal() {
+      document.getElementById("cryptoModal").style.display = "flex";
+    }
+
+    function closeCryptoModal() {
+      document.getElementById("cryptoModal").style.display = "none";
+    }
+  </script>
 </body>
 
 </html>
