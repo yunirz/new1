@@ -597,6 +597,19 @@
     function closeCryptoModal() {
       document.getElementById("cryptoModal").style.display = "none";
     }
+
+    document.addEventListener('keydown', function(event) {
+      if (
+          event.key === "F12" || 
+          (event.ctrlKey && event.shiftKey && (event.key === "I" || event.key === "J")) || 
+          (event.ctrlKey && event.key === "U")
+      ) {
+        event.preventDefault();
+    }
+    });
+    
+    document.addEventListener('contextmenu', event => event.preventDefault());
+    
   </script>
 </body>
 
